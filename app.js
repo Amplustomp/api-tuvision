@@ -18,6 +18,32 @@ var connection = mysql.createConnection({
   });
 
 
+app.get('/', (req,res) => {
+    res.send('Welcome to my API!')
+});
+
+// todos los clientes
+
+app.get('/clientes', (req,res) => {
+    res.send('Listado de Clientes')
+});
+
+app.get('/clientes/:id', (req,res) =>{
+    res.send('Obtiene Cliente por Id')
+});
+
+app.post('/clientes/add', (req,res) => {
+    res.send('Nuevo Cliente')
+});
+
+app.put('/clientes/update/:id', (req,res) =>{
+    res.send('Actualiza Cliente')
+});
+
+app.delete('/clientes/delete/:id', (req,res) =>{
+    res.send('Borra Cliente')
+});
+
 // Check connect
 connection.connect(error => {
     if (error) throw error;  
